@@ -63,7 +63,7 @@ def dijkstra(graph, src):
 def dijkstra2(graph, src):
     
     # the distances, initialize all to inf except src node
-    dists = [float('inf') for _ in range(len(graph))]
+    dists = [float('inf') for _ in range(len(graph) + 1)]
     dists[src] = 0
     
     Q = []
@@ -111,5 +111,23 @@ graph[3] = {2 : 1, 4 : 1, 8 : 1}
 graph[4] = {3 : 1, 5 : 1 }
 graph[5] = {4 : 1, 7 : 1, 6 : 2, 22 : 1}
 graph[6] = {5 : 1, 7 : 1}
-graph[7] = {} 
+graph[7] = {5 : 1, 6 : 1, 8 : 1}
+graph[8] = {3 : 1, 7 : 1, 9 : 1}
+graph[9] = {8 : 1, 10 : 1, 19 : 1}
+graph[10] = {9 : 1, 11 : 1, 18 : 1} 
+graph[11] = {10 : 1, 1 : 1, 12 : 2, 17 : 1}
+graph[12] = {11 : 2, 13 : 2}
+graph[13] = {12 : 2, 21 : 1, 14 : 2}
+graph[14] = {13 : 2, 16 : 1, 15 : 1, 20 : 1}
+graph[15] = {14 : 1}
+graph[16] = {14 : 1, 17 : 1}
+graph[17] = {16 : 1, 11 : 1}
+graph[18] = {17 : 1, 19 : 2, 10 : 1}
+graph[19] = { 18 : 2, 9 : 2}
+graph[20] = {14 : 1, 21 : 1, 22 : 1}
+graph[21] = {20 : 2, 22 : 2, 13 : 1, 2 : 1}
+graph[22] = {20 : 1, 21 : 2, 5 : 1}
+
+print(dijkstra2(graph, 1))
+
 
