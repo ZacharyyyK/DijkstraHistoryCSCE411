@@ -39,7 +39,7 @@ def dijkstra(graph, src):
     
     # set storing which nodes have not been visited
     non_visited_nodes = set()
-    for i in range(len(graph)):
+    for i in graph:
         non_visited_nodes.add(i)
         
     nodes_visited = set()
@@ -100,4 +100,16 @@ graph = {
 
 print(dijkstra2(graph, 0))
 
+graph = {}
+
+for i in range(1, 23):
+    graph[i] = None
+    
+graph[1] = {2 : 1, 11 : 1}
+graph[2] = {1 : 1, 3 : 1, 21 : 1}
+graph[3] = {2 : 1, 4 : 1, 8 : 1}
+graph[4] = {3 : 1, 5 : 1 }
+graph[5] = {4 : 1, 7 : 1, 6 : 2, 22 : 1}
+graph[6] = {5 : 1, 7 : 1}
+graph[7] = {} 
 
